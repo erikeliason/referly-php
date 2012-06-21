@@ -15,7 +15,7 @@ Then setup an instance of the Referly class with your app api key and secret.
 To create a new link for your account do the following:
 
     $account_id = 'your account id';
-    $url = 'http://www.amazon.com/Suck-UK-SK-CATDECK1-Scratch/dp/B006YR6EK8/ref=sr_1_1?ie=UTF8&qid=1340274754&sr=8-1&keywords=cat+suck+uk';
+    $url = 'http://www.amazon.com/catdj/dp/B006YR6EK8/';
     $response = $referly_client->create_link($account_id, $url);
     if ($response['code'] == 200) { // 200 code means request was successful.
         print $response['data']->url; // Print the shortened url to the screen.
