@@ -2,6 +2,8 @@
 
 This repository contains a helpful set of classes to connect to and interact with the http://refer.ly API. For full details on the API and available methods please check out http://refer.ly/api.
 
+Source code: http://github.com/referly/referly-php
+
 ## Getting Started
 
 To use the Referly class in your project, you need to include the lib/bootstrap.php file. Make sure to pass in the correct path to the lib folder, this will vary depending on where you place our API library within your project.
