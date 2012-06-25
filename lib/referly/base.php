@@ -57,7 +57,7 @@ class Referly_Base {
 	 *
 	 * @return { id: 'HZLD', url: 'http://refer.ly/HZLD' }
 	 */
-	public function create_link($account_id, $url) {
+	public function create_link($url, $account_id = NULL) {
 		$this->post = array(
 			'account_id' => $account_id,
 			'url' => $url
@@ -108,7 +108,7 @@ class Referly_Base {
 		$response = curl_exec($ch);
 
 		if ( ! $response && $response !== '') {
-			throw new Referly_Exception(curl_error($ch), curl_errno($cu));
+			throw new Referly_Exception(curl_error($ch), curl_errno($ch));
 		}
 		
 		$result = array(
