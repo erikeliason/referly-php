@@ -66,6 +66,25 @@ class Referly_Base {
 	}
 	
 	/**
+	 * Grant a reward
+	 *
+	 * @param string $visit_id The visit_id that converted.
+	 * @param float $amount The amount to reward in US dollars.
+	 * @param string $payable_on The date the reward is payable on.
+	 *
+	 * @return { reward_id: '1f0f9e1abb7011e1a7327fb81d69b655' }
+	 */
+	public function grant_reward($visit_id, $amount, $payable_on = date('Y-m-d', time() + 60*60*24*30)) {
+		$this->post = array(
+			'visit_id' => $visit_id,
+			'amount' => $amount,
+			'earned_on' => date('Y-m-d', time()),
+			'payable_on' => $payable_on
+		);
+		return $this->_send_request('/rewards', 'POST');
+	}
+	
+	/**
 	 * Private methods.
 	 */
 	private function _build_url($path) {
