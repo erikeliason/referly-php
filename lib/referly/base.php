@@ -74,7 +74,10 @@ class Referly_Base {
 	 *
 	 * @return { reward_id: '1f0f9e1abb7011e1a7327fb81d69b655' }
 	 */
-	public function grant_reward($visit_id, $amount, $payable_on = date('Y-m-d', time() + 60*60*24*30)) {
+	public function grant_reward($visit_id, $amount, $payable_on = null) {
+		if ($payable_on == null) {
+			$payable_on = date('Y-m-d', time() + 60*60*24*30);
+		}
 		$this->post = array(
 			'visit_id' => $visit_id,
 			'amount' => $amount,
