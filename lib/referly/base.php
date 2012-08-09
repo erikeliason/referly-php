@@ -104,6 +104,7 @@ class Referly_Base {
 		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 		curl_setopt($ch, CURLOPT_USERPWD, sprintf('%s:%s', $this->key, $this->secret));
 		curl_setopt($ch, CURLOPT_USERAGENT, 'referly-php-api');
+		curl_setopt($ch, CURLOPT_SSLVERSION, 3);
 
 		// SSL
 		if ($this->verify_ssl) {
